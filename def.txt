@@ -1,0 +1,32 @@
+define$ while ( _mword ) { 
+{
+	while $0 do
+}
+
+define$ for ( _mword ) {
+{
+	for $0 do
+}
+
+define$ function ( _mword ) { 
+{
+	function ( $0 )
+}
+
+define$ if ( _mword ) {
+{
+	if $0 then
+}
+
+define$ rstr ( _word )
+{
+	$0
+}
+
+define } end
+define var local
+define elseif else if
+define elif else if
+define && and
+define || or
+define ! not

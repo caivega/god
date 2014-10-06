@@ -1,0 +1,1 @@
+assert(loadstring('print(11)'))()
