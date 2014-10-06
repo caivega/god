@@ -85,8 +85,6 @@ int find_symm_word_e(const rbuf<rstr>& v,rstr &left,
 		if right==v[i]
 			--count
 		if count==0
-			break
-	if count
-		return v.count
-	return i
+			return i
+	return v.count
 }
