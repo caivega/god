@@ -2,7 +2,30 @@ print('123');print('455');
 
 print('a'..'b')
 
+
+var f;
+f=function(a){
+	if(a<=1)
+	{
+		return 1
+	}
+	return f(a-1)*a
+}
+print(f(5));
+
 var i=0
+while(i<10)
+{
+	print(i)
+	i++
+}
+
+for(i=1,10)
+{
+	print(i)
+}
+
+i=0
 while(i<11)
 {
 	if(i==5)
@@ -13,16 +36,6 @@ while(i<11)
 	::continue::
 	i++
 }
-var f;
-f=function(a){
-	if(a<=1)
-	{
-		return 1
-	}
-	return f(a-1)*a
-}
-
-print(f(5));
 
 if(i==2)
 {
