@@ -25,6 +25,11 @@ for(i=1,10)
 	print(i)
 }
 
+var b=['abc','123',test=111]
+print(b[1])
+print(b.test)
+print(b['test'])
+
 i=0
 while(i<11)
 {
