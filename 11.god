@@ -3,7 +3,7 @@ print('123');print('455');
 print('a'..'b')
 
 
-var f;
+var f
 f=function(a){
 	if(a<=1)
 	{
@@ -11,7 +11,7 @@ f=function(a){
 	}
 	return f(a-1)*a
 }
-print(f(5));
+print(f(5))
 
 var i=0
 while(i<10)
