@@ -77,7 +77,7 @@ update=function()
 	var i
 	for(i=1,200)
 	{
-		gotoxy(i%10*2,i/10)
+		gotoxy(i%10*2,math.modf(i/10))
 		if(exist(g_arr,i))
 		{
 			out('¡ö')
