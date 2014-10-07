@@ -9,7 +9,6 @@ void main()
 	s=rfile.read_all_n(v[3])
 	s+='\r\n'
 	s+=rfile.read_all_n(v[4])
-	rfile.remove('temp.h')
 	rfile.write_all_n('temp.h',s)
 	rf.cmd('rpp.exe -pre temp.h')
 	rfile.remove('temp.h')
@@ -17,7 +16,7 @@ void main()
 	proc(res,rfile.read_all_n('temp.txt'))
 	rfile.remove('temp.txt')
 	name=rdir.get_real_name(rdir.get_name(v[4]))+'.lua'
-	rfile.write_all_n(name,res.join(' '))
+	rfile.write_all_n(name,rcode.utf8_to_gbk(res.join(' ')))
 	rf.cmd('luajit.exe '+name)
 	rfile.remove(name)
 }
@@ -50,7 +49,16 @@ bool proc(rbuf<rstr>& res,rstr& s)
 		if v[i]=='!='
 			v[i]='~='
 		elif v[i]=='['
-			if is_table_pre(v.get(i-1))
+			if v.get(i-1)=='cdef'
+				right=find_symm_mbk(v,i)
+				if right>=v.count
+					return false
+				for j=i to right
+					if v[j]=='end'
+						v[j]='}'
+				v[i]='[['
+				v[right]=']]'
+			elif is_table_pre(v.get(i-1))
 				right=find_symm_mbk(v,i)
 				if right>=v.count
 					return false

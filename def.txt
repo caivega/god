@@ -30,3 +30,4 @@ define elif else if
 define && and
 define || or
 define ! not
+define null nil
