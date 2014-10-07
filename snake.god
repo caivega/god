@@ -65,7 +65,8 @@ push_front=function(v,a)
 
 food=function()
 {
-	g_food=math.modf(math.random()*10000)%200+1
+	//todo : array index unusual
+	g_food=math.modf(math.random()*10000)%200
 	if(exist(g_arr,g_food))
 	{
 		food()
